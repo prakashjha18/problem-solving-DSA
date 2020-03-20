@@ -3,8 +3,22 @@ import java.util.*;
 import java.util.Scanner;
 
 // Using LinkedListSet
-
-
+//another approach o(n) tc and o(1) sc
+//static int []removeDups(int []vect) 
+//{ 
+//      
+//    int prod = vect[0]; 
+//    int res_ind = 1; 
+//    for (int i = 1; i < vect.length; i++) 
+//    { 
+//        if (prod % vect[i] != 0) 
+//        { 
+//            vect[res_ind++] = vect[i]; 
+//            prod *= vect[i]; 
+//        } 
+//    } 
+//    return Arrays.copyOf(vect, res_ind); 
+}
 class Remove_Duplicates_in_Smile_Prime
 {
 	public static void main(String args[])
