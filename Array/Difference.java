@@ -51,7 +51,7 @@ class MaxDifference{
         
         LMin[0] = arr[0];
         for(i=1;i<n;i++){
-            LMin[i]=Math.min(arr[i],LMin[i-i]);
+            LMin[i]=Math.min(arr[i],LMin[i-1]);
         }
         RMax[n-1]=arr[n - 1];
         for(j=n-2;j>=0;j--){
