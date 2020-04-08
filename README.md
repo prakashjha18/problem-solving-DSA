@@ -32,7 +32,7 @@ for (int n: count.keySet()) {
  s += String.valueOf(arr[i][j])+" "; 
  ```
  
- ## 5) traverse a hashmao
+ ## 5) traverse a hashmap
  ```
   hm.forEach((k, v) -> System.out.println(k + " : " + (v + 10))); 
   ```
