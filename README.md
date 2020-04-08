@@ -27,7 +27,12 @@ for (int n: count.keySet()) {
         heap.poll();
     }
 ```
-## convert int into string 
+## 4) convert int into string 
 ```
  s += String.valueOf(arr[i][j])+" "; 
  ```
+ 
+ ## 5) traverse a hashmao
+ ```
+  hm.forEach((k, v) -> System.out.println(k + " : " + (v + 10))); 
+  ```
