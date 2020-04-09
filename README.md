@@ -36,3 +36,19 @@ for (int n: count.keySet()) {
  ```
   hm.forEach((k, v) -> System.out.println(k + " : " + (v + 10))); 
   ```
+  
+ ## 6) insert two elements as pair in hashmap
+ ```
+    static class pair 
+    {  
+        int first, second;  
+        public pair(int first, int second)  
+        {  
+            this.first = first;  
+            this.second = second;  
+        }  
+    } 
+    HashMap<Integer,pair> mp = new HashMap<Integer,pair>(); 
+    mp.put(arr[i] + arr[j], new pair(i, j)); 
+    pair p = mp.get(X - sum); 
+ ```
