@@ -2,7 +2,7 @@
 
 ## 1) store element in heap according to value of key from hashmap
 ```
- PriorityQueue<int[]> maxheap = new PriorityQueue<>((a,b) -> (b[0] * b[0] + b[1] * b[1] -(a[0] *a [0] + a[1] *a [1])));
+ PriorityQueue<Integer> heap = new PriorityQueue<Integer>((n1, n2) -> count.get(n1) - count.get(n2));
 ```
 other eg of using priorityqueue
 ```
