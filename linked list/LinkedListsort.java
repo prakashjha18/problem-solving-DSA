@@ -93,21 +93,20 @@ class LinkedListsort
         }
         return slow;
     }
-    static Node sortedMerge(Node a,Node b){
+     static Node sortedMerge(Node a,Node b){
         Node result=null;
         if(a==null)
             return b;
         if(b==null)
             return a;
         if(a.data<=b.data){
-            result=a;
-            result.next=sortedMerge(a.next,b);
+            a.next=sortedMerge(a.next,b);
+            return a;
         }else{
-            result=b;
-            result.next=sortedMerge(a,b.next);
+            b.next=sortedMerge(a,b.next);
+            return b;
             
         }
-        return result;
     }
 }
 
