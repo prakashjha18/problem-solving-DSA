@@ -52,3 +52,18 @@ for (int n: count.keySet()) {
     mp.put(arr[i] + arr[j], new pair(i, j)); 
     pair p = mp.get(X - sum); 
  ```
+ 
+ ## 7) treeset java
+ ```
+ TreeSet<Integer> set = new TreeSet<Integer>();
+ set.add(head1.data);
+ set.pollFirst()
+ ```
+ some links
+ https://www.callicoder.com/java-treeset/
+ https://www.javapedia.net/Queue-and-its-implementations/2109
+ 
+ 
+ 
+ 
+ 
