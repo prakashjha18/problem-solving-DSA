@@ -26,6 +26,15 @@ for (int n: count.keySet()) {
       if (heap.size() > k)
         heap.poll();
     }
+    
+        hash_map.put("Geeks", 10); 
+        hash_map.put("4", 15); 
+        hash_map.put("Geeks", 20); 
+        hash_map.put("Welcomes", 25); 
+        hash_map.put("You", 30); 
+        for(Map.Entry<String, Integer> entry : hash_map.entrySet()) {
+            System.out.print(entry.getValue()+" ");
+        }
 ```
 ## 4) convert int into string 
 ```
