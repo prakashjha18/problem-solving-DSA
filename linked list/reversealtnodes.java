@@ -66,31 +66,51 @@ class GfG
     public static void rearrange(Node odd)
     {
         // add your code here
-        Node even=new Node(0);
-        Node befodd=odd;
-        Node evencopy=even;
-        while(odd!=null && odd.next!=null){
-            even.next=odd.next;
-            even=even.next;
-            odd.next=odd.next.next;
-            befodd=odd;
-            odd=odd.next;
+//         Node even=new Node(0);
+//         Node befodd=odd;
+//         Node evencopy=even;
+//         while(odd!=null && odd.next!=null){
+//             even.next=odd.next;
+//             even=even.next;
+//             odd.next=odd.next.next;
+//             befodd=odd;
+//             odd=odd.next;
+            
+//         }
+//         even.next=null;
+//         evencopy=evencopy.next;
+//         Node temp = evencopy;
+//         Node curr = evencopy;
+//         Node prev = null;
+//         while(curr!=null){
+//             temp=curr.next;
+//             curr.next=prev;
+//             prev=curr;
+//             curr=temp;
+//         }
+//         if(odd!=null)
+//             odd.next=prev;
+//         else
+//             befodd.next=prev;
+        //APPROACH TWO
+        // add your code here
+        if (odd == null || odd.next == null || odd.next.next == null) { 
+            return; 
+        } 
+        Node even=odd.next;
+        odd.next=odd.next.next;
+        odd = odd.next; 
+        even.next=null;
+        while (odd != null && odd.next != null) { 
+            Node temp=odd.next.next;
+            odd.next.next=even;
+            even=odd.next;
+            odd.next=temp;
+            if (temp != null) { 
+                odd = temp; 
+            } 
             
         }
-        even.next=null;
-        evencopy=evencopy.next;
-        Node temp = evencopy;
-        Node curr = evencopy;
-        Node prev = null;
-        while(curr!=null){
-            temp=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=temp;
-        }
-        if(odd!=null)
-            odd.next=prev;
-        else
-            befodd.next=prev;
+        odd.next = even; 
     }
 }
