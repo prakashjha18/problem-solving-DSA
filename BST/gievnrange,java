@@ -1,6 +1,14 @@
 // { Driver Code Starts
 //Initial Template for Java
-
+// Input:
+// 2
+// 17 4 18 2 9 
+// 4 24
+// 16 7 20 1 10 
+// 13 23
+// Output:
+// 4 9 17 18 
+// 16 20 
 //Initial Template for Java
 
 import java.util.LinkedList; 
