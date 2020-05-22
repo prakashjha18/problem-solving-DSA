@@ -72,7 +72,18 @@ for (int n: count.keySet()) {
  https://www.callicoder.com/java-treeset/
  https://www.javapedia.net/Queue-and-its-implementations/2109
  
- 
+ ## 8) new way of adding a pair value
+ ```
+  Queue<int[]> q = new LinkedList<>();
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                if(A[i][j]==2){
+                    q.add(new int[]{i,j});
+                }
+            }
+        }
+ int []cur = q.poll();
+```
  
  
  
