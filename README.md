@@ -84,6 +84,29 @@ for (int n: count.keySet()) {
         }
  int []cur = q.poll();
 ```
+
+### 9) custom sort on inbuilt library
+```
+class Pair
+{
+    int x;
+    int y;
+    
+    public Pair(int a, int b)
+    {
+        x = a;
+        y = b;
+    }
+}
+class CompareByFirstN implements Comparator<Pair>
+{
+  public int compare(Pair a, Pair b)
+    {
+        return a.y - b.y;
+    }
+}
+Arrays.sort(arr, new CompareByFirstN());
+```
  
  
  
