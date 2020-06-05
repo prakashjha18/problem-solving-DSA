@@ -107,6 +107,33 @@ class CompareByFirstN implements Comparator<Pair>
 }
 Arrays.sort(arr, new CompareByFirstN());
 ```
- 
+## 9) custom sort of encapsulated method
+```
+class Dimension implements Comparable<Dimension> {
+    int height;
+    int length;
+    int width;
+
+    Dimension(int height, int length, int width) {
+        this.height = height;
+        this.length = length;
+        this.width = width;
+    }
+     @Override
+    public int compareTo(Dimension d) {
+        if (this.length * this.width >= d.length * d.width) {
+            return -1;
+        } else {
+            return 1;
+        }
+    }
+}
+Dimension[] allRotationInput = new Dimension[input.length * 3];
+createAllRotation(input, allRotationInput);
+
+//sort these boxes in non increasing order by their base area.(length X width)
+Arrays.sort(allRotationInput);
+refered from https://github.com/prakashjha18/Amazon-SDE/blob/master/dynamic%20programming/boxstacking.java
+```
  
  
