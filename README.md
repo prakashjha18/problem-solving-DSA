@@ -135,5 +135,28 @@ createAllRotation(input, allRotationInput);
 Arrays.sort(allRotationInput);
 refered from https://github.com/prakashjha18/Amazon-SDE/blob/master/dynamic%20programming/boxstacking.java
 ```
- 
+## 10) custom comparator for treemap
+```
+class MyComparator implements Comparator {
+
+    Map map;
+    
+    public MyComparator(Map map) {
+        this.map = map;
+    }
+    
+    public int compare(Object o1, Object o2) {
+        if((Integer)map.get(o2)==(Integer) map.get(o1)){
+            return((Integer)o2-(Integer)o1);
+        }
+        return ((Integer) map.get(o2)-(Integer) map.get(o1));
+    }
+}
+ MyComparator comp=new MyComparator(mp);
+
+Map<Integer,Integer> newMap = new TreeMap<>(comp);
+newMap.putAll(mp);
+//https://github.com/prakashjha18/Amazon-SDE/blob/master/contests/gadgestofdoraland.java
+
+```
  
