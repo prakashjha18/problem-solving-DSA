@@ -159,4 +159,7 @@ newMap.putAll(mp);
 //https://github.com/prakashjha18/Amazon-SDE/blob/master/contests/gadgestofdoraland.java
 
 ```
- 
+## 11) A way of adding pairs 
+```
+List<Pair<Integer, Character>> filteredS = new ArrayList<Pair<Integer, Character>>();
+```
