@@ -1,52 +1,68 @@
-// Java program to print all permutations of a 
-// given string. 
-public class Permutation 
-{ 
-    public static void main(String[] args) 
-    { 
-        String str = "ABC"; 
-        int n = str.length(); 
-        Permutation permutation = new Permutation(); 
-        permutation.permute(str, 0, n-1); 
-    } 
-  
-    /** 
-     * permutation function 
-     * @param str string to calculate permutation for 
-     * @param l starting index 
-     * @param r end index 
-     */
-    private void permute(String str, int l, int r) 
-    { 
-        if (l == r) 
-            System.out.println(str); 
-        else
-        { 
-            for (int i = l; i <= r; i++) 
-            { 
-                str = swap(str,l,i); 
-                permute(str, l+1, r); 
-                str = swap(str,l,i); 
-            } 
-        } 
-    } 
-  
-    /** 
-     * Swap Characters at position 
-     * @param a string value 
-     * @param i position 1 
-     * @param j position 2 
-     * @return swapped string 
-     */
-    public String swap(String a, int i, int j) 
-    { 
-        char temp; 
-        char[] charArray = a.toCharArray(); 
-        temp = charArray[i] ; 
-        charArray[i] = charArray[j]; 
-        charArray[j] = temp; 
-        return String.valueOf(charArray); 
-    } 
-  
-} 
-  
+// { Driver Code Starts
+//Initial Template for Java
+
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+class Recursion {
+	public static void main (String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		int T=sc.nextInt();
+		sc.nextLine();
+		while(T-->0)
+		{
+		    
+		    Permutation obj=new Permutation();
+		    
+		    String S=sc.nextLine();
+		    
+		    obj.permutation(S);
+		    
+		    System.out.println();
+		}
+		
+	}
+}
+// } Driver Code Ends
+//User function Template for Java
+
+
+class Permutation
+{
+    public ArrayList<String> al1 = new ArrayList<>();
+    public void permutation(String s)
+    {
+        //Your code here
+        int l =0,r=s.length()-1;
+        ArrayList<String> al = getPerm(s,l,r);
+        Collections.sort(al);
+        for(String s1:al)
+            System.out.print(s1+" ");
+    }
+    public String swap(String s,int i,int j)
+    {
+        char[] ch = s.toCharArray();
+        char t = ch[i];
+        ch[i] = ch[j];
+        ch[j]= t;
+        return String.valueOf(ch);
+    }
+    public ArrayList<String> getPerm(String s,int l,int r)
+    {
+        if(l == r)
+        {
+            al1.add(s);
+        }
+        else {
+            for(int i=l;i<=r;i++)
+            {
+                    s = swap(s,l,i);
+                    getPerm(s,l+1,r);
+                    s = swap(s,l,i);
+            }
+        }
+        return al1;
+    }
+}
