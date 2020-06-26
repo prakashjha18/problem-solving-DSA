@@ -26,4 +26,22 @@ class relativesorting {
         return arr1;
         
     }
+    public static void sortA1ByA2(int arr1[], int N, int arr2[], int M)
+    {
+        //Your code here
+        TreeMap<Integer, Integer> map = new TreeMap<>();
+            for(int n : arr1) map.put(n, map.getOrDefault(n, 0) + 1);
+            int i = 0;
+            for(int n : arr2) {
+                for(int j = 0; j < map.get(n); j++) {
+                    arr1[i++] = n;
+                }
+                map.remove(n);
+            }
+            for(int n : map.keySet()){
+                for(int j = 0; j < map.get(n); j++) {
+                    arr1[i++] = n;
+                }
+            }
+    }
 }
