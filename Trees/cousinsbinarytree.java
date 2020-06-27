@@ -10,7 +10,28 @@ class Node
         left = right = null; 
     } 
 } 
-  
+//   class Solution {
+    
+//    Map<Integer, Integer> depth;
+//     Map<Integer, Node> parent;
+
+//     public boolean isCousins(Node root, int x, int y) {
+//         depth = new HashMap();
+//         parent = new HashMap();
+//         dfs(root, null);
+//         return (depth.get(x) == depth.get(y) && parent.get(x) != parent.get(y));
+//     }
+
+//     public void dfs(Node node, Node par) {
+//         if (node != null) {
+//             depth.put(node.data, par != null ? 1 + depth.get(par.data) : 0);
+//             parent.put(node.data, par);
+//             dfs(node.left, node);
+//             dfs(node.right, node);
+//         }
+//     }
+
+// }
 class cousinsbinarytree 
 { 
     Node root; 
