@@ -182,3 +182,38 @@ List<Pair<Integer, Character>> filteredS = new ArrayList<Pair<Integer, Character
 		    }
   }
 ```
+## 13) buffer reader for input type
+```
+1       --> no of testcase
+7 2
+8 4 10 15 14 88 64
+15
+88
+
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+int t = Integer.parseInt(br.readLine().trim());
+while(t-->0){
+    String line = br.readLine().trim();
+    String[] tokens = line.split("\\s+");
+    int n = Integer.parseInt(tokens[0]);
+    int Q = Integer.parseInt(tokens[1]);
+    int a[]=new int[n];
+    line = br.readLine().trim();
+    tokens = line.split("\\s+");
+    root=null;
+    for (int i=0; i<n; i++){ 
+	a[i] = Integer.parseInt(tokens[i]);
+	//root= insert(root,a[i]);
+    }
+    for(int i=0;i<Q;i++){
+	int ele = Integer.parseInt(br.readLine().trim());
+	//StringBuffer result = new StringBuffer();
+	//print(root,ele,result);
+	//if (result.length() == 0) result.append("Empty");
+    	//System.out.println(result);
+    }
+}
+
+
+```
