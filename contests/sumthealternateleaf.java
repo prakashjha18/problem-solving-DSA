@@ -1,4 +1,42 @@
 /*package whatever //do not write package name here */
+/*You need to build a BST from the given array A of size N. The array contains distinct elements. You need 
+to build the tree using the Array elements in the order of their arrival (A[0] becomes root and so on). Now, you need to sum the alternate leaf nodes of this BST and print the result.
+Note: Start from the left side of the tree when searching for leaf nodes. So sum leaftnode1+leaftnode3+leafnode5 ...
+
+Input:
+The first line of input contains T denoting the number of testcases. T testcases follow. Each testcase
+contains two lines of input. The first line contains N. The second line contains array elements.
+
+Output:
+For each testcase, in a new line, print the sum of alternate leaf nodes.
+
+Constraints:
+1 <= T <= 200
+1 <= N <= 107
+1 <= Ai <= 108
+
+Examples:
+Input:
+1
+6
+5 1 2 3 4 6
+Output:
+4
+
+Explanation:
+Testcase1:
+The BST will look like :
+            5
+          /     \
+        1        6
+         \         
+            2                
+               \          
+                3  
+                    \
+                        4
+As it is evident from the above BST, the leaf nodes are 4 and 6. So sum of alternate leaf nodes would be 4.
+*/
 import java.util.*;
 import java.lang.*;
 import java.io.*;
