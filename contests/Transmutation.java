@@ -8,7 +8,7 @@
 // however, he wants you to do it in the minimum number of steps to save time.
 
 // Can you maintain your status-quo as the legendary Alchemist?
-
+ 
 // Input:
 // The first line of input contains T, the number of testcases. T testcases follow. Each testcase 
 // contains one line of input containing number N.
