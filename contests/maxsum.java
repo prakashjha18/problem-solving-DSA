@@ -1,53 +1,32 @@
 // { Driver Code Starts
 //Initial Template for Java
-/*
-A gallery with plants is divided into n parts, numbered : 0,1,2,3...n-1. There are provisions for attaching
-water sprinklers at every partition. A sprinkler with range x at partition i can water all partitions from i-x to i+x.
+// Given an array arr[] of positive integers of size N . You need to find maximum sum that can be formed from
+// the integers of the array under the constraint that no three consecutive elements can be used .
+// Input:
+// First line of input contains number of test cases T. For each test case , first line contains N denoting 
+// size of the array and Next line contains N space seperated integers .
+// Output:
+// For each test case , Print maximum sum.
+// Your Task:
 
-Given an array gallery[ ] consisting of n integers, where gallery[i] is the range of sprinkler at partition 
-i (power==-1 indicates no sprinkler attached), return the minimum number of sprinklers that need to be turned 
-on to water the complete gallery.
-
-If there is no possible way to water the full length using the given sprinklers, print -1.
-
-Input:
-First line of input holds the number of test cases t, then t test cases follow. In each test case, first line
-holds the integer n. Second line of test case holds the n space separated integers representing the array gallery[ ].
-
-Output:
-Output should hold the minimum number of sprinklers that need to be turned on to water the complete length.
-
-Your task:
-Your task is to complete the function min_sprinklers() which takes the array gallery[ ] and the integer n as
-input parameters and returns the value to be printed.
-
-Constraints:
-T <= 500
-n <= 1000
-gallery[i] <= 50
-
-Example:
-Input:
-3
-6
--1 2 2 -1 0 0
-9
-2 3 4 -1 2 0 0 -1 0
-9
-2 3 4 -1 0 0 0 0 0
-Output:
-2
--1
-3
-Explanation:
-Testcase 1:
-Sprinklers at index 2 and 5 can water the full gallery, span of sprinkler at index 2 = [0,4] and span of sprinkler 
-at index 5 = [5,5]
-Testcase 2:
-No sprinkler can throw water at index 7. Hence all plants cannot be watered.
-Testcase 3:
-Sprinkler at indexes 2, 7 and 8 together can water all plants.
-*/
+// You have to complete the function MaxSum() which accpets given array and it's size as parameter and returns
+// the value of maximum sum.
+// Constraints:
+// 1<= T <=100
+// 1<= N <=105
+// 1<= arr[i] <=103
+// Example:
+// Input:
+// 2
+// 5
+// 1 2 3 4 5
+// 4
+// 9 2 1 3
+// Output:
+// 12
+// 14
+// Explanation: 
+// Test Case 1: 1 + 2 + 4 + 5 = 12
 
 
 import java.io.*;
