@@ -30,7 +30,7 @@ Sample Output:
 
 3
 2
-6
+6 
 
 Explanation:
 For test case 1:  For value 12 we have 3 combinations in total.
