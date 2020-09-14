@@ -184,6 +184,40 @@ class Codechef
             din.close(); 
         } 
     }
+            public static Integer findMin(List<Integer> list) 
+	    { 
+
+		// check list is empty or not 
+		if (list == null || list.size() == 0) { 
+		    return Integer.MAX_VALUE; 
+		} 
+
+		// return minimum value of the ArrayList 
+		return Collections.min(list); 
+	    } 
+
+	    // function return maximum value in an unsorted 
+	    //  list in Java using Collection 
+	    public static Integer findMax(List<Integer> list) 
+	    { 
+
+		// check list is empty or not 
+		if (list == null || list.size() == 0) { 
+		    return Integer.MIN_VALUE; 
+		} 
+
+		// return maximum value of the ArrayList 
+		return Collections.max(list); 
+	    } 
+	    public static void rec(double a[][],HashSet<Integer> s,int p,int n, double t){
+		for(int i=0;i<n;i++){
+		    if (a[p][i] > t)
+		    {
+			s.add(i);
+			rec(a, s, i, n, a[p][i]);
+		    }
+		}
+	    }
 	public static void main (String[] args) throws java.lang.Exception
 	{
 		// your code goes here
@@ -228,6 +262,58 @@ class Codechef
     		        }
     		    }
     		    System.out.println(min+" "+max);
+    		}
+		}
+		catch(Exception e){}
+		// Method 2 using backtracking
+		try{
+    		Reader sc=new Reader(); 
+    		int t = sc.nextInt();
+    		while(t-->0){
+    		    int n = sc.nextInt();
+    		    double a[][] = new double[n][n];
+    		    int ar[] = new int[n];
+    		    for(int i=0;i<n;i++){
+    		        ar[i]=sc.nextInt();
+    		    }
+    		    double d1;
+    		    for(int i=0;i<n;i++){
+    		        for(int j=0;j<n;j++){
+    		            a[i][j] = 0;
+    		        }
+    		    }
+    		    
+    		    for(int i=0;i<n;i++){
+    		        for(int j=0;j<n;j++){
+    		            if (ar[i] == ar[j])
+                        {
+                            a[i][j] = -1;
+                        }
+                        else
+                        {
+                            double up = (i-j);
+                            double dp = ar[j]-ar[i];
+                            d1 = (double)(up / dp);
+                            if (d1 <= 0)
+                            {
+                                a[i][j] = -1;
+                            }
+                            else
+                            {
+                                a[i][j] = d1;
+                            }
+                        }
+    		        }
+    		    }
+    		  HashSet<Integer> s = new HashSet<Integer>();
+    		  List<Integer> v = new ArrayList<Integer>();
+    		  for(int i=0;i<n;i++){
+    		      s.add(i);
+    		      rec(a,s,i,n,0);
+    		      v.add(s.size());
+    		      s.clear();
+    		  }
+    		  System.out.println(findMin(v) +" "+findMax(v));
     		}
 		}
 		catch(Exception e){}
