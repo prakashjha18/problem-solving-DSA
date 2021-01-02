@@ -16,7 +16,7 @@
 // Output: "A"
 // Example 2:
 
-// Input: 28
+// Input: 28  
 // Output: "AB"
 // Example 3:
 
