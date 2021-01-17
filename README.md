@@ -217,3 +217,63 @@ while(t-->0){
 
 
 ```
+## 14) custom sort for arraylist and array of objects
+```
+Sim[] temp;
+temp = new Sim[j];
+ArrayList<Sim> bs = new ArrayList<Sim>();
+Collections.sort(bs, new Comparator<Sim>() {
+    public int compare(Sim idx1, Sim idx2) {
+	return Double.compare(idx2.getBalance(), idx1.getBalance());
+    }
+});
+Arrays.sort(temp, new Comparator<Sim>() {
+    public int compare(Sim idx1, Sim idx2) {
+	return Double.compare(idx2.getBalance(), idx1.getBalance());
+    }
+});
+class Sim {
+    private int simId;
+    private String name;
+    private double balance;
+    private double ratePersecond;
+    private String circle;
+    public Sim(int simId, String name, double balance, double ratePersecond, String circle) {
+        this.simId = simId;
+        this.name = name;
+        this.balance = balance;
+        this.ratePersecond = ratePersecond;
+        this.circle = circle;
+    }
+    public int getSimId() {
+        return simId;
+    }
+    public void setSimId(int simId) {
+        this.simId = simId;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+    public double getRatePersecond() {
+        return ratePersecond;
+    }
+    public void setRatePersecond(double ratePersecond) {
+        this.ratePersecond = ratePersecond;
+    }
+    public String getCircle() {
+        return circle;
+    }
+    public void setCircle(String circle) {
+        this.circle = circle;
+    }
+}
+```
