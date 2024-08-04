@@ -277,3 +277,14 @@ class Sim {
     }
 }
 ```
+
+
+## 15) Sum of array
+```
+Array.stream(num).sum();
+```
+
+## 16) max from HashmapValues
+```
+int maxValues = Collections.max(hm.values());
+```
