@@ -26,7 +26,7 @@
 // There are no self-loops or repeated edges.
 
 
-
+//solution 1 O(N+E)
 class Solution {
     public boolean validTree(int n, int[][] edges) {
         List<List<Integer>> adjacencyList = new ArrayList<>();
@@ -58,5 +58,38 @@ class Solution {
         }
 
         return parent.size() == n;
+    }
+}
+
+//Solution 2 : O(N)
+class Solution {
+    public boolean validTree(int n, int[][] edges) {
+        if (edges.length != n-1) return false;
+        List<List<Integer>> adjacencyList = new ArrayList<>();
+        for(int i=0;i<n;i++){
+            adjacencyList.add(new ArrayList<>());
+        }
+        for(int[] edge :  edges){
+            adjacencyList.get(edge[0]).add(edge[1]);
+            adjacencyList.get(edge[1]).add(edge[0]);
+        }
+
+
+        Queue<Integer> queue = new LinkedList<>();
+        Set<Integer> seen = new HashSet<>();
+        seen.add(0);
+        queue.offer(0);
+
+
+        while(!queue.isEmpty()){
+            int node = queue.poll();
+            for(int neighbour : adjacencyList.get(node)){
+                if(seen.contains(neighbour)) continue;
+                queue.offer(neighbour);
+                seen.add(neighbour);
+            }
+        }
+
+        return seen.size() == n;
     }
 }
